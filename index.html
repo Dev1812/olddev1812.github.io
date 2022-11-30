@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
 </head>
-<body>
+<body id="body">
 
 
 <div id="wrap1">
 
 
 <style>
+  .popup-box{overflow: auto;}
 .popup-box__body__2_title{text-align:center;margin:24px  0 14px;font-weight:bold}
 .popup-box__body__2_body{line-height:25px;font-size:.9em;}
 .popup-box__close:hover{background-color:#EEE;border-radius:9px;cursor:pointer}
@@ -64,13 +65,12 @@ h3{padding-top:9px}
     #who_are_me{display:none!important}
 
     .about-block__title_text{padding:0px 27px}
- #photo3_wrap{float:none!important;padding:14px}
-#photo3{width:100%!important}
-#head-about{text-align:center!important}
-.popup-box__wrap{width:100%!important}
-.popup_box_global_close{display:none!important}
-}
 
+    .popup-box__wrap{
+    width: 76%!important;}
+
+
+}
 </style>
 
 
@@ -83,11 +83,11 @@ h3{padding-top:9px}
 
 <div class="welcome-block">
   <div class="welcome-block__wrap">
-  <div id="head-about" style="margin-bottom:74px;font-weight:bold;font-size:1.5em">
+  <div style="margin-bottom:74px;font-weight:bold;font-size:1.5em">
     <div style="float:right" id="who_are_me"> Fullstack-developer</div>
     <div>Исаев Тимур.</div>
   </div>
-  <div id="photo3_wrap">
+  <div style="float:right">
     <div id="photo3" style="background-image: url('image/03fPl38into (2).jpg');width:340px;height:340px;background-size:cover;border-radius:29px"></div>
     <div style="margin-top:33px;
     margin-bottom: 26px;	"><button style="background-color:#f5dd3d;color:#000;width:100%;height:54px;font-weight:bold;border-radius:14px;border:0;cursor:pointer;font-size:1.0em">Портфолио</button></div>
@@ -302,11 +302,13 @@ var Popup_Box = {
     ge('popup_box').style.display='';
     ge('popup_box__title').innerHTML=title;
     ge('popup_box__body').innerHTML=body;
+    ge('body').style.overflow='hidden';
 
   },
   hide: function() {
     ge('popup_box_layer').style.display='none';
     ge('popup_box').style.display='none';
+    ge('body').style.overflow='auto';
   }
 }, __sp=Popup_Box;
 function showSuperPovarProject() {
